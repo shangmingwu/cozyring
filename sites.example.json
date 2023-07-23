@@ -1,0 +1,17 @@
+{ "sites": [
+	{
+		"name": "Simon Wu's Personal Site",
+		"slug": "sw",
+		"url": "https://simonwu.dev"
+	},
+	{
+		"name": "Uzay Girit's Personal Site",
+		"slug": "uzpg",
+		"url": "https://uzpg.me"
+	},
+    {
+        "name": "Ryan Yang's Blog",
+		"slug": "radicalcenter",
+        "url": "https://ryanyang.us"
+    }
+]}

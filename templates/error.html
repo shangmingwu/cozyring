@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Error {{ status_code }} page for Cozyring.">
+    <meta name="author" content="Simon Wu">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', path='favicon.ico') }}" />
+    <title>Cozyring Error {{ status_code }}</title>
+    <!-- <link rel="canonical" href=""> -->
+    <link href="{{ url_for('static', path='bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', path='landing.css') }}" rel="stylesheet">
+  </head>
+  <body>
+    <main role="main" class="container">
+      <h1 class="mt-5">Cozyring Error: {{ status_code }}</h1>
+        <p>{{ detail }}</p>
+        <p>Looks like you've run into an error. Try returning to the <a href="{{ url_for('root') }}">landing page</a>.</p>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">Made with <a href="https://github.com/shangmingwu/cozyring">Cozyring</a></span>
+      </div>
+    </footer>
+  </body>
+</html>

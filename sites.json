@@ -1,0 +1,7 @@
+{ "sites": [
+	{
+		"name": "Example Site",
+		"slug": "example",
+		"url": "https://example.com"
+	}
+]}
