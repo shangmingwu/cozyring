@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Instructions listing for Cozyring.">
+    <meta name="author" content="Simon Wu">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', path='favicon.ico') }}" />
+    <title>Cozyring Instructions</title>
+    <!-- <link rel="canonical" href=""> -->
+    <link href="{{ url_for('static', path='bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', path='landing.css') }}" rel="stylesheet">
+  </head>
+  <body>
+    <main role="main" class="container">
+        <h1 class="mt-5">Cozyring Instructions</h1>
+        <p class="lead">Instructions on how to join the ring.</p>
+        <h2>Adding your site to Cozyring</h2>
+        <p>If you'd like to add your site to Cozyring, make a pull request to <a href="https://github.com/shangmingwu/ring">this repository</a> to add your entry to <code>sites.json</code>.</p>
+        <p>Then, if I approve your entry, your site will pop up in the main listing and in the below instrucitons list. Click on your entry in the instructions list to see the links you need to add on your end.</p>
+        <h2>Site instructions list</h2>
+        <p>Individual site instructions for:</p>
+      <ul>
+        {% if sites %}
+          {% for site in sites %}
+                  <li><a href="{{ url_for('instructions', slug=site.slug) }}">{{ site.name }}</a></li>
+          {% endfor %}
+        {% else %}
+          <li>Looks like there aren't any sites added to the ring.</li>
+          <li>Add some entries in <code>sites.json</code>!</li>
+        {% endif %}
+      </ul>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">Made with <a href="https://github.com/shangmingwu/cozyring">Cozyring</a></span>
+      </div>
+    </footer>
+  </body>
+</html>
