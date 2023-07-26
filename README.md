@@ -13,7 +13,7 @@ This clones the repository, creates a virtual environment, then installs the dep
 
 ```sh
 git clone https://github.com/shangmingwu/cozyring.git
-cd fastwring
+cd cozyring
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
@@ -51,8 +51,10 @@ When you add a site to Cozyring, whoever runs that site should the links to the 
 
 You can add sites to Cozyring by adding entries into `sites.json` and then restarting the Cozyring deployment.
 An example list of sites is found in `sites.example.json`.
+Once the site shows up in the list, the owner of the site needs to add links to the appropriate next and previous endpoints.
 
 ### Customization
 
 The landing and error page are built from templates in the `templates` folder using Jinja2.
-You can edit `landing.html` and `error.html` as well as add static assets (custom CSS files, images, icons, etc.) to the `static/` folder.
+You can edit `landing.html`, `error.html`, `instructions_list.html` and `instructions.html`.
+Additionally, you can add or change static assets (custom CSS files, images, icons, etc.) in the `static/` folder.
