@@ -3,32 +3,33 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Landing page for Cozyring.">
+    <meta name="description" content="Instructions listing for Cozyring.">
     <meta name="author" content="Simon Wu">
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', path='favicon.ico') }}" />
-    <title>Cozyring</title>
+    <title>Cozyring Instructions</title>
     <!-- <link rel="canonical" href=""> -->
     <link href="{{ url_for('static', path='bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', path='landing.css') }}" rel="stylesheet">
   </head>
   <body>
     <main role="main" class="container">
-      <h1 class="mt-5">Cozyring Landing Page</h1>
-      <p class="lead">Edit this landing page in <code>templates/landing.html</code>.</p>
-      <p>Welcome to Cozyring, a modern webring.</p>
-      <h2>Sitelist</h2>
-      <p>Dive into this webring through one of the links below, or visit <a href="{{ url_for('random') }}">a random site</a> from the list.</p>
+        <h1 class="mt-5">Cozyring Instructions</h1>
+        <p class="lead">Instructions on how to join the ring.</p>
+        <h2>Adding your site to Cozyring</h2>
+        <p>To add your site to Cozyring, an entry needs to be made for your site in <code>sites.json</code>, and then links to the appropriate next and previous endpoints should be added to your site.</p>
+        <p>Contact the owner of this Cozyring deployment about adding your site to this ring, and then follow the instructions for your site once it appears in the list below.</p>
+        <h2>Site instructions list</h2>
+        <p>Individual site instructions for:</p>
       <ul>
         {% if sites %}
           {% for site in sites %}
-                  <li><a href="{{ site.url }}">{{ site.name }}</a></li>
+                  <li><a href="{{ url_for('instructions', slug=site.slug) }}">{{ site.name }}</a></li>
           {% endfor %}
         {% else %}
           <li>Looks like there aren't any sites added to the ring.</li>
           <li>Add some entries in <code>sites.json</code>!</li>
         {% endif %}
       </ul>
-      <p>To add your site to this webring, see the <a href="{{ url_for('instructions_list') }}">instructions</a>.</p>
     </main>
     <footer class="footer">
       <div class="container">

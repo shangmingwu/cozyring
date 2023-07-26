@@ -14,7 +14,7 @@
   <body>
     <main role="main" class="container">
       <h1 class="mt-5">Cozyring Error: {{ status_code }}</h1>
-        <p>{{ detail }}</p>
+        <p class="lead">{{ detail }}</p>
         <p>Looks like you've run into an error. Try returning to the <a href="{{ url_for('root') }}">landing page</a>.</p>
     </main>
     <footer class="footer">

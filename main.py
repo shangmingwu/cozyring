@@ -33,6 +33,19 @@ templates = Jinja2Templates(directory="templates")
 async def root(request: Request):
     return templates.TemplateResponse("landing.html", {"request": request, "sites": sites})
 
+@app.get("/inst/", name="instructions_list")
+async def list_inst(request: Request):
+    return templates.TemplateResponse("instructions_list.html", {"request": request, "sites": sites})
+
+@app.get("/inst/{slug}", name="instructions")
+async def get_inst(slug: str, request: Request):
+    if not slug in index:
+        raise HTTPException(status_code=404, detail="Invalid webring slug.")
+    n = index[slug]
+    url = sites[n]["url"]
+    name = sites[n]["name"]
+    return templates.TemplateResponse("instructions.html", {"request": request, "slug_passed": slug, "url": url, "name": name})
+
 @app.get("/next/{slug}", name="next")
 async def get_next(slug: str):
     if len(sites) == 0:

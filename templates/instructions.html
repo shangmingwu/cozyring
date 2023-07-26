@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Cozyring join instructions.">
+    <meta name="author" content="Simon Wu">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', path='favicon.ico') }}" />
+    <title>Cozyring Instructions</title>
+    <!-- <link rel="canonical" href=""> -->
+    <link href="{{ url_for('static', path='bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', path='landing.css') }}" rel="stylesheet">
+  </head>
+  <body>
+    <main role="main" class="container">
+      <h1 class="mt-5">Cozyring Instructions</h1>
+      <p class="lead">Instructions on how to join the ring.</p>
+      <p>These are instructions meant for <b>{{ name }}</b> hosted at <a href="{{ url }}">{{ url }}</a> (text: <code>{{ url }}</code>).</p>
+      <p>Your site has already been added to Cozyring. Now, you need to put the links to the next and previous sites in Cozyring into the page that you added.</p>
+      <ul>
+        <li>Link to the next site in Cozyring:
+            <ul>
+                <li><a href="{{ url_for('next', slug=slug_passed) }}">{{ url_for('next', slug=slug_passed) }}</a></li>
+                <li>Text: <code>{{ url_for('next', slug=slug_passed) }}</code></li>
+            </ul>
+        </li>
+        <li>Link to the previous site in Cozyring:
+            <ul>
+                <li><a href="{{ url_for('previous', slug=slug_passed) }}">{{ url_for('next', slug=slug_passed) }}</a></li>
+                <li>Text: <code>{{ url_for('previous', slug=slug_passed) }}</code></li>
+            </ul>
+        </li>
+        <li>Link to a random site in Cozyring (optional):
+            <ul>
+                <li><a href="{{ url_for('random') }}">{{ url_for('random') }}</a></li>
+                <li>Text: <code>{{ url_for('random') }}</code></li>
+            </ul>
+        </li>
+        <li>Link to the Cozyring landing page (optional):
+            <ul>
+                <li><a href="{{ url_for('root') }}">{{ url_for('root') }}</a></li>
+                <li>Text: <code>{{ url_for('root') }}</code></li>
+            </ul>
+        </li>        
+      </ul>
+      <p>Add the links to your page for the next and previous Cozyring sites, and optionally link back to the main landing page and the random site endpoint.</p>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">Made with <a href="https://github.com/shangmingwu/cozyring">Cozyring</a></span>
+      </div>
+    </footer>
+  </body>
+</html>
