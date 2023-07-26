@@ -7,6 +7,19 @@ If you love wandering on the internet, clicking down into rabbit holes at your l
 
 Cozyring uses Python 3.9 with FastAPI, Uvicorn and Jinja2.
 
+### Vercel deployment
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fshangmingwu%2Fcozyring&project-name=cozyring-deployment&repository-name=cozyring-deployment&demo-title=Simon's%20Cozyring&demo-description=A%20working%20deployment%20of%20Cozyring.&demo-url=https%3A%2F%2Fring.simonwu.dev&demo-image=https%3A%2F%2Fraw.githubusercontent.com%2Fshangmingwu%2Fcozyring%2Fmain%2Fstatic%2Fscreenshot.png)
+
+Cozyring can be deployed on Vercel using serverless functions.
+You can deploy a fork of this GitHub repository to Vercel, or you can deploy a local modified copy from the command line.
+
+```sh
+yarn global add vercel
+vercel login
+vercel .
+```
+
 ### Manual installation
 
 This clones the repository, creates a virtual environment, then installs the dependencies in the virtual environment.
@@ -26,17 +39,6 @@ By default, Uvicorn will start on 0.0.0.0:8000, and you can edit `main.py` to ch
 
 ```sh
 python main.py
-```
-
-### Vercel deployment
-
-Cozyring can be deployed on Vercel using serverless functions.
-You can deploy a fork of this GitHub repository to Vercel, or you can deploy a local modified copy from the command line.
-
-```sh
-yarn global add vercel
-vercel login
-vercel .
 ```
 
 ## Usage
